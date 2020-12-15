@@ -1,0 +1,138 @@
+
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+body,html{
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background-color: lightgray;
+    font-family: "Lato", sans-serif;
+}
+#welcome {
+    font-family: "Lato", sans-serif;
+    color: white;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-top:10%;
+    margin-bottom: 2%;
+    font-size: 200%;
+}
+
+#freeze {
+    font-family: "Lato", sans-serif;
+    color: black;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 2%;
+}
+
+.credits-text {
+    color: white;
+    font-size: 250%;
+    text-align: center;
+}
+
+#illegal {
+    font-size: 150%;
+    text-align: center;
+    color: red;
+}
+
+#frozen {
+    font-size: 150%;
+    text-align: center;
+    color: darkturquoise;
+}
+
+.button {
+    font-family: "Lato", sans-serif;
+    color: black;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.inline-button {
+    float: left;
+    width: 25%;
+    margin-left:6%;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    background-color: lightcoral;
+    position: relative;
+}
+
+.box-1 {
+    position: absolute;
+    left: 33%;
+    margin-top:15%;
+}
+
+.box-2 {
+    position: absolute;
+    left: 30%;
+    margin-top:15%;
+}
+
+.box-3 {
+    position: absolute;
+    left: 30%;
+    margin-top:7%;
+}
+
+.label {
+    position: relative;
+    font-family: "Lato", sans-serif;
+    color: white;
+    font-size: 150%;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.sub {
+    width:100%;
+}
+.form {
+    font-family: "Lato", sans-serif;
+    color: black;
+    display: block;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 95%;
+}
+
+a {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+input[type=submit] {
+    color: #fff !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ed3330;
+    padding: 20px;
+    border-radius: 5px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+}
+
+input[type=submit]:hover {
+    background: #434343;
+    letter-spacing: 1px;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.4s ease 0s;
+}
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>e-Wallet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+    <div id="credits">
+        <p class="credits-text">Credits: 0.0</p>
+    </div>
+    <div class="inline-button">
+        <div class="box-1">
+            <form action="/deposit" method="get">
+            <label class="label">Deposit Credits </label>
+            <input class="form" type="number" step="0.01" id="deposit" name="deposit"><br>
+            <input class="sub" type="submit" value="Deposit">
+            </form>
+        </div>
+    </div>
+    <div class="inline-button">
+        <div class="box-2">
+            <form action="/withdraw" method="get">
+                <label class="label">Withdraw Credits </label>
+                <input class="form" type="number" step="0.01" id="withdraw" name="withdraw"><br>
+                <input class="sub" type="submit" value="Withdraw">
+            </form>
+        </div>
+    </div>
+    <div class="inline-button">
+        <div class="box-3">
+            <form action="/transfer" method="get">
+                <label class="label">Transfer Credits </label>
+                <input class="form" type="number" step="0.01" id="transfer" name="transfer"><br>
+                <label class="label ">Recipient Wallet ID</label>
+                <input class="form" type="number" step="0.01" id="id2" name="id2"><br>
+                <input class="sub" type="submit" value="Transfer">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

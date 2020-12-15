@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="BingTextFormatLib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/BingTextFormatLib.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/BingTextFormatLib.jar!/" />
+    </SOURCES>
+  </library>
+</component>

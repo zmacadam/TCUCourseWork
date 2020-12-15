@@ -1,0 +1,31 @@
+Horned Frog Shell (hfsh.c)
+
+This program is a shell that can run in either interactive mode (no arguments) or batch mode (one argument, file name)
+
+My shell program passes all the tests given and a few of my own, leading me to believe that it has all the functionality required of the assignment
+
+It handles:
+Parallel Commands
+Redirection
+Built in Commands
+Variable whitespace (including lack of whitespace)
+
+My shell program can take:
+10 commands per line
+20 arguments per command
+25 PATH variables at one time
+
+These values can be changed by changing:
+max_args in the #define statement at the top
+max_cmds and max_path at the beginning of the main function.
+
+One thing I will say about the testing of this program using the tests you gave:	
+	I was very disappointed to run my program this morning using the tests and to see that the program failed tests! 
+	It had just worked on all the tests last night! 
+	Turns out, other students were not properly removing their files in /tmp, because they were testing at the same time.
+	This led me to completely overhaul some of the functionality of my code, retesting it and rewriting it when it turns out my code was fine.
+	Because I could not access the file they had created and not removed, I was scrambling until I realized I just had to rename the file to create in the test/*.in file.
+	Maybe give students a heads up that their shell can affect other people when using a directory all students can access like /tmp.
+
+I am proud of my shell! I hope it works :) 
+

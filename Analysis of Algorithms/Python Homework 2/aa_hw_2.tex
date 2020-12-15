@@ -1,0 +1,249 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Analysis of Algorithms
+%
+% Homework Assignment #2
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Score Card and Answer Sheets
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[addpoints,11pt]{exam}
+\usepackage{clrscode4e}
+\usepackage{tcucosc}
+\usepackage{units}
+\usepackage{enumitem}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Begin Document
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+	\pagestyle{empty}
+	
+	
+	\noindent{\large\bfseries Name: Zachary Macadam{\hrulefill}}\\
+	\noindent{\large\bfseries COSC 40403 - Analysis of Algorithms: Fall 2019: Homework 2}\\
+	\noindent{\large\bfseries Due: 23:59:59 on September 11}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%
+	% Score Card and Answer Sheets
+	%
+	% Comment out one-or-the-other to show or not-show the answers.
+	%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%\printanswers
+	\printanswers
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%
+	% Score Card
+	%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\ifprintanswers
+	\noindent
+	\begin{center}
+		\gradetable[v][questions]
+	\end{center}
+	\newpage
+	\fi
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%
+	% Question 1
+	%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{questions}
+		\question[5]
+		Show that $f(n) = 27 + 18n + 9n^2 + 3n^3 \in \Theta(n^3)$.  That is, use the definitions of $O$ and $\Omega$ to show that $f(n)$ is both $O(n^3)$ and $\Omega(n^3)$. 
+		\begin{solutionorbox} \\
+			To prove that f(n) = 27 + 18n + 9$n^2$ + 3$n^3$ is $\Omega(n^3)$ \\
+			0 $\leq$ c$n^3$ $\leq$ 27 + 18n + 9$n^2$ + 3$n^3$\\ when c = 5 and n$\textsubscript{0}$ = 6:
+			0 $\leq$ 1080 $\leq$ 1107\\
+			To prove that f(n) = 27 + 18n + 9$n^2$ + 3$n^3$ is $O(n^3)$ \\
+			0 $\leq$ 27 + 18n + 9$n^2$ + 3$n^3$ $\leq$ c$n^3$\\ when c = 6 and n$\textsubscript{0}$ = 5:
+			0 $\leq$ 717 $\leq$ 750 \\ \\
+			Therefore $f(n) = 27 + 18n + 9n^2 + 3n^3 \in \Theta(n^3)$.
+		\end{solutionorbox}
+		
+		\ifprintanswers
+		\newpage
+		\else
+		\bigskip
+		\fi
+		
+		
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%
+		% Question 2
+		%
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\question[5]
+		Suppose you have a computer that requires 1 minute to solve problem instances of size $n=2500000$.  Suppose you buy a new computer that runs 3500 times faster than the old one.  What instance sizes can be run in 1 minute, assuming the following time complexities $T(n)$ for our algorithm?
+		\begin{enumerate}[label=(\alph*)]
+			\item $T(n) = n$
+			\item $T(n) = n^3$
+			\item $T(n) = 10^n$
+		\end{enumerate}
+		\begin{solutionorbox}
+			\begin{enumerate}[label=(\alph*)]
+				\item $n = 2500000 * 3500 = 8.75e9$
+				\item $n = 2060.64265\textsuperscript{3} = 8.75e9$\\
+				Since rounding to 2061 would surpass 1 minute, $n = 2060$
+				\item $n = 10\textsuperscript{9.942} = 8.75e9$\\
+				Since rounding to 10 would surpass 1 minute, $n = 9$
+			\end{enumerate}
+		\end{solutionorbox}
+		
+		\ifprintanswers
+		\newpage
+		\else
+		\bigskip
+		\fi
+		
+		
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%
+		% Question 3
+		%
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\question[5]
+		Let $f(n)$ and $g(n)$ be asymptotically nonnegative functions.  Using the basic definition of $\Theta$-notation, prove that $\max(f(n),g(n)) = \Theta(f(n)+g(n))$.
+		\begin{solutionorbox}\\
+			Since both $f(n)$ and $g(n)$ are both asymptotically nonnegative we can assume\\
+			\begin{tabular}{r l}
+				$\exists n\textsubscript{1},n\textsubscript{2}: f(n) \geq 0 $ & for $ n > n\textsubscript{1}$\\
+				$g(n) \geq 0$ & for $ n > n\textsubscript{2}$\\ 
+			\end{tabular}\\ \\
+			Let $n\textsubscript{0} = max(n1, n2)$\\
+			\begin{tabular}{c}
+				$f(n) \leq max(f(n),g(n))$\\
+				$g(n) \leq max(f(n),g(n))$\\
+				$(f(n) + g(n))/2 \leq max(f(n),g(n))$\\
+				$max(f(n),g(n)) \leq f(n) + g(n)$
+			\end{tabular}\\ \\
+			Combining the last two inequalities provides\\ \\
+			\begin{tabular}{c}
+				$0 \leq \frac{1}{2}(f(n) + g(n)) \leq max(f(n),g(n)) \leq f(n) + g(n)$ for $n > n\textsubscript{0}$
+			\end{tabular}\\ \\
+			This is the definition of $\Theta(f(n)+g(n))$ with $c\textsubscript{1} = \frac{1}{2} $ and $ c\textsubscript{2} = 1$
+			
+		\end{solutionorbox}
+		
+		\ifprintanswers
+		\newpage
+		\else
+		\bigskip
+		\fi
+		
+		
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%
+		% Question 4
+		%
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\question[5]
+		Show that the golden ratio $\phi$ and its conjugate $\hat\phi$ both satisfy the equation $x^2 = x+1$.
+		\begin{solutionorbox}\\
+			$\phi^2 - \phi - 1 = (\frac{1 + \sqrt{5}}{2})^2 - \frac{1 + \sqrt{5}}{2} - 1 == \frac{1 + 2\sqrt{5} + 5 - 2 - 2\sqrt{5} - 4}{4} == \frac{6 - 6}{4} = 0$\\ \\
+			$\hat\phi^2 - \hat\phi - 1 = (\frac{1 - \sqrt{5}}{2})^2 - \frac{1 - \sqrt{5}}{2} - 1 == \frac{1 - 2\sqrt{5} + 5 - 2 + 2\sqrt{5} - 4}{4} == \frac{6 - 6}{4} = 0$
+		\end{solutionorbox}
+		
+		\ifprintanswers
+		\newpage
+		\else
+		\bigskip
+		\fi
+		
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%
+		% Question 5
+		%
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\question[5]
+		Prove by induction that the $i$th Fibonacci number satisfies the equality
+		$$F_i = \frac{\phi^i - \hat{\phi^i}}{\sqrt{5}}$$
+		where $\phi$ is the golden ratio and $\hat{\phi^i}$ is its conjugate.
+		\begin{solutionorbox}\\
+			Base Case:\\
+			\begin{tabular}{c}
+				\qquad $F\textsubscript{0} = \frac{\phi^0 - \phi^0}{\sqrt{5}} = \frac{1 - 1}{\sqrt{5}} = 0$\\
+				\qquad $F\textsubscript{1} = \frac{\phi^1 - \phi^1}{\sqrt{5}} = \frac{\sqrt{5}}{\sqrt{5}} = 1$\\
+			\end{tabular} \\ \\ 
+			Inductive Step:\\ Assume that the inequality holds for i = k and i = k - 1 for all k $\geq$ 2\\
+			Need to prove: inequality holds for i = k + 1\\
+			\begin{tabular}{r l}
+				$F\textsubscript{k+1}$ = & $F\textsubscript{k} + F\textsubscript{k-1}$ \\
+				= & $\frac{\phi^k-\phi^k}{\sqrt{5}} + \frac{\phi\textsuperscript{k-1}-\phi\textsuperscript{k-1}}{\sqrt{5}}$\\
+				= & $\frac{(\phi^k-\phi^k) + (\phi\textsuperscript{k-1}-\phi\textsuperscript{k-1})}{\sqrt{5}}$\\
+				= & $\frac{(\phi^k + \phi\textsuperscript{k-1}) - (\phi^k + \phi\textsuperscript{k-1})}{\sqrt{5}}$\\
+				= & $\frac{\phi\textsuperscript{k-1}(\phi + 1) - \phi\textsuperscript{k-1}(\phi + 1)}{\sqrt{5}}$\\
+				= & $\frac{\phi\textsuperscript{k-1}*\phi^2 - \phi\textsuperscript{k-1} * \phi^2}{\sqrt{5}}$\\
+				= & $\frac{\phi\textsuperscript{k+1} - \phi\textsuperscript{k+1}}{\sqrt{5}}$\\
+			\end{tabular}\\
+			The inequality holds for k + 1!
+		\end{solutionorbox}
+		
+		\ifprintanswers
+		\newpage
+		\else
+		\bigskip
+		\fi
+		
+		
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%
+		% Question 6
+		%
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\question[5]
+		Consider the following algorithm:
+		\begin{codebox}
+			\Procname{$\proc{Print-I-J}(n)$}
+			\li $i=2$
+			\li \While $(i<n)$ \Do
+			\li 	$j=n$
+			\li 	\While $(j\ge 0)$ \Do
+			\li 		\proc{Print}($i$, $j$)
+			\li 		$j = j - \floor{n/6}$
+			\End
+			\li 	$i = i + 1$
+			\End
+			\End
+		\end{codebox}
+		
+		\begin{enumerate}[label=(\roman*)]
+			\item What is the output when $n=6$, $n=18$, $n=72$, $n=216$?
+			\item What is the complexity $\Theta(n)$.  You may assume that $n$ is divisible by 6.
+		\end{enumerate}
+		
+		\begin{solutionorbox}
+			\begin{enumerate}[label=(\roman*)]
+				\item For $n=6$ the outer loop runs 4 times (2 to 5) and the inner loop runs 7 times.\\
+				For each iteration of the inner loop, i stays constant and j is decremented by 1 (from 6 to 0).\\
+				For $n = 18$ the outer loop runs 16 times (2 to 17) and the inner loop runs 7 times.\\
+				For each iteration of the inner loop, i stays constant and j is decremented by 3 (from 18 to 0).\\
+				For $n = 72$ the outer loop runs 70 times (2 to 71) and the inner loop runs 7 times.\\
+				For each iteration of the inner loop, i stays constant and j is decremented by 12 (from 72 to 0).\\
+				For $n = 216$ the outer loop runs 214 times (2 to 216) and the inner loop runs 7 times.\\
+				For each iteration of the inner loop, i stays constant and j is decremented by 36 (216 to 0).
+				\item By analyzing the above output, it is clear that the outer loop runs n - 2 times and the inner loop always runs 7 times.\\
+				This makes the time complexity (ignoring constant operations):\\ 7(n - 2) = 7n - 14 = $\Theta(n)$
+			\end{enumerate}
+		\end{solutionorbox}
+		
+		\ifprintanswers
+		\newpage
+		\else
+		\bigskip
+		\fi
+		
+	\end{questions}
+\end{document}

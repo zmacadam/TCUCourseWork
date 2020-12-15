@@ -1,0 +1,18 @@
+This folder contains 4 utility programs written in C
+
+tcat: Has nearly the same behavior as the utility cat except when no file is specified.
+      Prints the contents of file(s) line by line, if the file can be opened.
+      Command takes the following CL arguments: ./tcat searchterm [file...] 
+
+tgrep: Has behavior similar as the utility grep.
+       Searches the given file(s) for lines containing the given search term if the file can be opened. If the term is found, the line is printed to the console.
+       If no file is specified, the tgrep command attempts to match standard input to the search term given.
+       If the empty string is given as a search term, all lines in the file are matched.
+       Command takes the following CL arguments: ./tgrep searchterm [file...] (file not required)
+
+tzip: Uses run-length encoding (RLE) to zip given file to standard output, hopefully the zipped file is smaller than the unzipped file! (Chances are it won't be).
+      Important thing to note: tzip also zips null bytes! 
+      Command takes the following CL arguments: ./tzip [file...] 
+
+tunzip: Takes a file zipped using RLE and unzips it, outputting results to standard output. Handles null bytes and returns the file back to the exact size it started as.
+	Command takes the following CL arguments: ./tunzip [file...]

@@ -1,0 +1,45 @@
+{
+   "ORGANISM": {
+      "GENUS": "Pisum",
+      "SPECIES": "Sativum",
+      "COMMON_NAME": "Pea Plant"
+   },
+   "GENES": [
+      {
+         "GENE_TRAIT": "Plant Stature",
+         "DOMINANT_ALLELE": "Tall",
+         "DOMINANT_SYMBOL": "T",
+         "RECESSIVE_ALLELE": "Dwarf",
+         "RECESSIVE_SYMBOL": "t"
+      },
+      {
+         "GENE_TRAIT": "Seed Texture",
+         "DOMINANT_ALLELE": "Wrinkled",
+         "DOMINANT_SYMBOL": "W",
+         "RECESSIVE_ALLELE": "Smooth",
+         "RECESSIVE_SYMBOL": "w"
+      },
+      {
+         "GENE_TRAIT": "Seed Color",
+         "DOMINANT_ALLELE": "Green",
+         "DOMINANT_SYMBOL": "S",
+         "RECESSIVE_ALLELE": "Yellow",
+         "RECESSIVE_SYMBOL": "s"
+      },
+      {
+         "GENE_TRAIT": "Flower Color",
+         "DOMINANT_ALLELE": "Purple",
+         "DOMINANT_SYMBOL": "C",
+         "RECESSIVE_ALLELE": "White",
+         "RECESSIVE_SYMBOL": "c"
+      }
+   ],
+   "PARENTS": [
+      {
+         "GENOTYPE": "Tt Ww Ss Cc"
+      },
+      {
+         "GENOTYPE": "Tt Ww Ss Cc"
+      }
+   ]
+}

@@ -1,0 +1,11 @@
+<beans>
+    <bean id="harry" class="problem5.domain.Soldier">
+        <property name="name" value="Harry Potter"></property>
+        <property name="rank" value="Sergeant"></property>
+        <property name="age" value="35"></property>
+    </bean>
+    <bean id="m1" class="problem5.domain.Tank">
+        <property name="model" value="M1 Abrams"></property>
+        <property name="speed" value="45"></property>
+    </bean>
+</beans>
